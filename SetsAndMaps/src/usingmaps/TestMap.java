@@ -25,7 +25,7 @@ public class TestMap
         System.out.println(treeMap);
         
         // Create a LinkedHashMap
-        Map<String,Integer> linkedHashMap = new LinkedHashMap(16,0.75f,false);
+        Map<String,Integer> linkedHashMap = new LinkedHashMap(16,0.75f,true);
         linkedHashMap.put("Smith",30);
         linkedHashMap.put("Anderson",31);
         linkedHashMap.put("Lewis",29);
@@ -33,6 +33,9 @@ public class TestMap
         
         // Display the age for Lewis
         System.out.println("\nThe age for " + "Lewis is " + linkedHashMap.get("Lewis"));
+        
+        // Display the age of Smith
+        System.out.println("\nThe age for " + "Smith is " + linkedHashMap.get("Smith"));
         
         System.out.println("Display entries in LinkedHashMap");
         System.out.println(linkedHashMap);
