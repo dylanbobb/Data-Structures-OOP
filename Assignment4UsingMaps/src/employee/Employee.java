@@ -1,4 +1,5 @@
 // This class models an employee
+package employee;
 public class Employee
 {
     private int idNum;
