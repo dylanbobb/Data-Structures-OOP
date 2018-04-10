@@ -32,7 +32,7 @@ public class AllEmployee
         
         // Searching for employee #2. We expect the does not exist message to be displayed because there is no employee #2.
         System.out.println("Searching for employee #2: ");
-        if(employeeMap.containsKey(2))
+        if(employeeMap.containsKey(2)) // Checking if employee #2 exists
         {
             System.out.println(employeeMap.get(2)); // If it does exist, print the employee.
         }
@@ -43,6 +43,11 @@ public class AllEmployee
         
         // Lastly we will search for employee #3
         System.out.println("Searching for employee #3: ");
-        if(employeeMap.containsKey(3)){}
+        if(employeeMap.containsKey(3)) // Checking if employee #3 exists
+        {
+            System.out.println(employeeMap.get(3)); // If it does exist, print the employee. IN THIS CASE WE EXPECT THIS TO HAPPEN
+        }
+        
+        // TODO: FINISH SEARCH
     }
 }
