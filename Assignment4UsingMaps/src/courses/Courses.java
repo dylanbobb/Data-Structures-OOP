@@ -22,15 +22,15 @@ public class Courses
             int studentNumber = Integer.parseInt(sc.next());
             String courseName = sc.next();
             
+            ArrayList<String> courseList = new ArrayList();
             if(students.containsKey(studentNumber))
             {
-                ArrayList<String> courseList = students.get(studentNumber);
+                courseList = students.get(studentNumber);
                 courseList.add(courseName);
                 students.put(studentNumber, courseList);
             }
             else
             {
-                ArrayList<String> courseList = new ArrayList();
                 courseList.add(courseName);
                 students.put(studentNumber, courseList);
             }
