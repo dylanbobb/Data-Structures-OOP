@@ -10,4 +10,11 @@ public class Employee
         this.idNum = idNum;
         this.name = name;
     }
+    
+    // String representation of Employee
+    @Override
+    public String toString()
+    {
+        return "ID: " + this.idNum + " Name: " + this.name;
+    }
 }
