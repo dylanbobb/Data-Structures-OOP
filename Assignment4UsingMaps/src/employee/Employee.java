@@ -33,17 +33,21 @@ public class Employee
     @Override
     public boolean equals(Object obj) 
     {
-        if (this == obj) {
+        if (this == obj) 
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null) 
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass()) 
+        {
             return false;
         }
         final Employee other = (Employee) obj;
-        if (this.idNum != other.idNum) {
+        if (this.idNum != other.idNum) 
+        {
             return false;
         }
         return true;
