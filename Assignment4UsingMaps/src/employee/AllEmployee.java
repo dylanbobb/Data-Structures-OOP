@@ -13,7 +13,10 @@ public class AllEmployee
         employeeMap.put(0,new Employee(0,"Dylan"));
         employeeMap.put(4,new Employee(4,"Bobb"));
         employeeMap.put(5,new Employee(5,"Sean"));
-        employeeMap.put(3,new Employee(3,"Carly"));
+        employeeMap.put(3,new Employee(3,"Test")); 
+        employeeMap.put(3,new Employee(3,"Carly")); // "Carly" will replace "Test" in the HashMap because 2 employees cannot have the same ID.
+        
+        employeeMap.forEach((k,v) -> System.out.println(k+" " + v));
         
         /*
           Testing this class by searching for a few employees by their IdNum and printing the employee if it exists.
@@ -21,33 +24,44 @@ public class AllEmployee
         // The logic behind this search is: if the employee number is found, the Employee will be printed using toString(). If it does not exist, a does not exist message will be printed.
         // Searching for employee #0
         System.out.println("Searching for employee #0: ");
-        if(employeeMap.containsKey(0)) // Checking if employee #0 exists
+        // Checking if employee #0 exists
+        if(employeeMap.containsKey(0))
         {
-            System.out.println(employeeMap.get(0)); // If it does exist, print the employee. IN THIS CASE WE EXPECT THIS TO HAPPEN
+            // If it does exist, print the employee. IN THIS CASE WE EXPECT THIS TO HAPPEN
+            System.out.println(employeeMap.get(0));
         }
         else
         {
-            System.out.println("Employee #0 does not exist"); // Otherwise, print a message saying the employee does not exist.
+            // Otherwise, print a message saying the employee does not exist.
+            System.out.println("Employee #0 does not exist");
         }
         
         // Searching for employee #2. We expect the does not exist message to be displayed because there is no employee #2.
         System.out.println("Searching for employee #2: ");
-        if(employeeMap.containsKey(2)) // Checking if employee #2 exists
+        // Checking if employee #2 exists
+        if(employeeMap.containsKey(2))
         {
-            System.out.println(employeeMap.get(2)); // If it does exist, print the employee.
+            // If it does exist, print the employee.
+            System.out.println(employeeMap.get(2)); 
         }
         else
         {
-            System.out.println("Employee #2 does not exist"); // Otherwise, print a message saying the employee does not exist. IN THIS CASE WE EXPECT THIS TO HAPPEN
+            // Otherwise, print a message saying the employee does not exist. IN THIS CASE WE EXPECT THIS TO HAPPEN
+            System.out.println("Employee #2 does not exist");
         }
         
         // Lastly we will search for employee #3
         System.out.println("Searching for employee #3: ");
-        if(employeeMap.containsKey(3)) // Checking if employee #3 exists
+        // Checking if employee #3 exists
+        if(employeeMap.containsKey(3))
         {
-            System.out.println(employeeMap.get(3)); // If it does exist, print the employee. IN THIS CASE WE EXPECT THIS TO HAPPEN
+            // If it does exist, print the employee. IN THIS CASE WE EXPECT THIS TO HAPPEN
+            System.out.println(employeeMap.get(3));
         }
-        
-        // TODO: FINISH SEARCH
+        else
+        {
+            // Otherwise, print a message saying the employee does not exist.
+            System.out.println("Employee #3 does not exist");
+        }
     }
 }
