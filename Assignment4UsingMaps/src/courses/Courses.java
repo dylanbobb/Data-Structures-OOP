@@ -1,6 +1,7 @@
 package courses;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class Courses
@@ -35,5 +36,11 @@ public class Courses
         }
         
         students.forEach((k,v) -> System.out.println(k + "\t" + v));
+        
+        students.forEach((k,v) -> 
+        {
+            Collections.sort(v);
+            System.out.println(k + "\t" + v);
+        });
     }
 }
