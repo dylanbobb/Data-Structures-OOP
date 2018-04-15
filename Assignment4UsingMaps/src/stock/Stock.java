@@ -1,9 +1,11 @@
+// This class models a stock
 package stock;
 public class Stock
 {
     private int stockNumber;
     private Data data;
-    
+
+    // 2 Argument Constructor
     public Stock(int stockNumber,String name,int quantity)
     {
         this.stockNumber = stockNumber;
@@ -11,7 +13,8 @@ public class Stock
         data.setName(name);
         data.setQuantity(quantity);
     }
-    
+
+    // Getters
     public int getStockNumber()
     {
         return this.stockNumber;
@@ -21,7 +24,8 @@ public class Stock
     {
         return this.data;
     }
-    
+
+    // HashCode and Equals based off stock number to prevent 2 stock objects from having the same stocknumber inside the hashmap.
     @Override
     public int hashCode() 
     {
