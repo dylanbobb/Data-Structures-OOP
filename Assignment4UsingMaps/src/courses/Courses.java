@@ -8,12 +8,14 @@ public class Courses
 {
     public static void main(String[] args)
     {
+        // Create an arraylist of students and add some values to it.
         ArrayList<Student> mixedCourseList = new ArrayList();
         mixedCourseList.add(new Student(1,"CS100"));
         mixedCourseList.add(new Student(2,"MATH210"));
         mixedCourseList.add(new Student(2,"CS105"));
         mixedCourseList.add(new Student(1,"CS200"));
-        
+
+        // Create a hasmap to store the students
         HashMap<Integer,ArrayList<String>> students = new HashMap();
 
         for(Student x:mixedCourseList)
