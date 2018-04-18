@@ -4,29 +4,16 @@ public class Main
 {
     public static void main(String[] args)
     {
-        // Empty
-        Node<String> head = null;
-        Node<String> tail = null;
+        MyLinkedList<String> myList = new MyLinkedList();
+        myList.addLast("Hi");
+        myList.addLast("This");
+        myList.addLast("Is");
+        myList.addLast("A");
+        myList.addLast("Test");
         
-        // Add 1 node
-        head = new Node("Chicago");
-        tail = head;
-        
-        // Adding another node
-        tail.next = new Node("Denver");
-        tail = tail.next;
-        
-        // Adding one more
-        tail.next = new Node("LA");
-        tail = tail.next;
-        
-        // Printing the list
-        Node<String> current = head;
-        
-        while(current != null)
+        for(int i = 0; i < myList.size(); i++)
         {
-            System.out.println(current);
-            current = current.next;
+            System.out.println(myList.get(i));
         }
     }
 }
