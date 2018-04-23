@@ -64,9 +64,48 @@ public class MyLinkedList<E> implements MyList<E>
         return tail.element;
     }
     
-    public E removeFirst(){return null;}
+    public E removeFirst()
+    {
+        if(size == 0)
+        {
+            return null;
+        }
+        if(size == 1)
+        {
+            E temp = head.element;
+            head = tail = null;
+            size = 0;
+            return temp;
+        }
+        E temp = head.element;
+        head = head.next;
+        size--;
+        return temp;
+    }
     
-    public E removeLast(){return null;}
+    public E removeLast()
+    {
+        if(size == 0)
+        {
+            return null;
+        }
+        if(size == 1)
+        {
+            E temp = tail.element;
+            head = tail = null;
+            size = 0;
+            return temp;
+        }
+        E temp = tail.element;
+        Node<E> current = head;
+        while(current != tail)
+        {
+            current = current.next;
+        }
+        tail = current;
+        size--;
+        return temp;
+    }
     
     @Override
     public void clear()
