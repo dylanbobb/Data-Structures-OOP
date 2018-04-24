@@ -157,8 +157,59 @@ public class MyLinkedList<E> implements MyList<E>
     }
     
     @Override
-    public void add(int index,E object){}
+    public void add(int index,E object)
+    {
+        if(isEmpty() || index <= 0)
+        {
+            addFirst(object);
+        }
+        else if(index >= size)
+        {
+            addLast(object);
+        }
+        else
+        {
+            Node<E> newNode = new Node(object);
+            Node<E> current = head;
+            for(int i = 0; i < index - 1; i++)
+            {
+                current = current.next;
+            }
+            newNode.next = current.next;
+            current.next = newNode;
+            size++;
+        }
+    }
     
     @Override
-    public E remove(int index){return null;}
+    public E remove(int index)
+    {
+        if(isEmpty())
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        else if(index <= 0)
+        {
+            Node<E> temp = head;
+            removeFirst();
+            return temp.element;
+        }
+        else if(index == size - 1 || index >= size)
+        {
+            Node<E> temp = tail;
+            removeLast();
+            return temp.element;
+        }
+        else
+        {
+            Node<E> current = head;
+            for(int i = 0; i < index - 1; i++)
+            {
+                current = current.next;
+            }
+            Node<E> temp = current.next;
+            current.next = current.next.next;
+            return temp.element;
+        }
+    }
 }

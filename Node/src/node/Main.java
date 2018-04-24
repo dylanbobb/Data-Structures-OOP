@@ -10,7 +10,6 @@ public class Main
         myList.addLast("Is");
         myList.addLast("A");
         myList.addLast("Test");
-        
         for(int i = 0; i < myList.size(); i++)
         {
             System.out.println(myList.get(i));
