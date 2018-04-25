@@ -121,10 +121,36 @@ public class MyLinkedList<E> implements MyList<E>
     }
     
     @Override
-    public boolean contains(E object){return false;}
+    public boolean contains(E object)
+    {
+        Node<E> current = head;
+        while(current != null)
+        {
+            if(current.element.equals(object))
+            {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
     
     @Override
-    public int indexOf(E object){return Integer.MIN_VALUE;}
+    public int indexOf(E object)
+    {
+        Node<E> current = head;
+        int counter = 0;
+        while(current != null)
+        {
+            if(object.equals(current.element))
+            {
+                return counter;
+            }
+            current = current.next;
+            counter++;
+        }
+        return -counter;
+    }
     
     @Override
     public E get(int index)
@@ -148,7 +174,19 @@ public class MyLinkedList<E> implements MyList<E>
     }
     
     @Override
-    public void set(E object,int index){}
+    public void set(E object,int index)
+    {
+        if(index < 0 || index >= size)
+        {
+            System.out.println("Error: index does not exist");
+        }
+        Node<E> current = head;
+        for(int i = 0; i < index; i++)
+        {
+            current = current.next;
+        }
+        current.element = object;
+    }
     
     @Override
     public int size()
@@ -184,11 +222,11 @@ public class MyLinkedList<E> implements MyList<E>
     @Override
     public E remove(int index)
     {
-        if(isEmpty())
+        if(isEmpty() || index < 0)
         {
             throw new IndexOutOfBoundsException();
         }
-        else if(index <= 0)
+        else if(index == 0)
         {
             Node<E> temp = head;
             removeFirst();
