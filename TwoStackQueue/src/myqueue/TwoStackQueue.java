@@ -1,6 +1,5 @@
 package myqueue;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Stack;
@@ -18,7 +17,7 @@ public class TwoStackQueue<E> implements MyQueueI<E>
     
     public TwoStackQueue(List<E> L)
     {
-        super();
+        this();
         for(E x:L)
         {
             inStack.push(x);
