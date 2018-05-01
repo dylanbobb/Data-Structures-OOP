@@ -8,9 +8,15 @@ public class DemoSort
 {
     public static void main(String[] args)
     {
-        double[] ar = {2,7,322,46,1,7,6,1,5,6,7,653,-3};
-        insertionSort(ar);
-        System.out.println(Arrays.toString(ar));
+        LinkedList<Book> list = new LinkedList();
+        list.add(new Book(5,"A"));
+        list.add(new Book(43,"Z"));
+        list.add(new Book(2,"B"));
+        list.add(new Book(40,"X"));
+        insertionSort(list);
+        //selectionSort(list);
+        //bubbleSort(list);
+        System.out.println(list);
     }
     
     public static void insertionSort(double[] list)
@@ -109,7 +115,7 @@ public class DemoSort
             int currentMaxIndex = i;
             for(int j = i + 1; j < list.size(); j++)
             {
-                if(currentMax.compareTo(j) < 0)
+                if(currentMax.compareTo(list.get(j)) < 0)
                 {
                     currentMax = list.get(j);
                     currentMaxIndex = j;
