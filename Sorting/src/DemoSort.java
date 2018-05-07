@@ -242,9 +242,8 @@ public class DemoSort
                 firstHalf.add(list.get(i));
             }
             mergeSort(firstHalf);
-            int secondHalfLength = list.size() - list.size() / 2;
-            List<E> secondHalf = new ArrayList(secondHalfLength);
-            for(int i = list.size() / 2; i < secondHalfLength; i++)
+            List<E> secondHalf = new ArrayList();
+            for(int i = list.size() / 2; i < list.size(); i++)
             {
                 secondHalf.add(list.get(i));
             }
